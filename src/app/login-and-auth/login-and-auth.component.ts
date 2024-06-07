@@ -6,16 +6,16 @@ import {ButtonModule} from "primeng/button";
 import {TranslateModule} from '@ngx-translate/core';
 import {InputTextModule} from 'primeng/inputtext';
 import {AuthService} from "./auth.service";
-import {Router} from "@angular/router";
+import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {MessageService} from "primeng/api";
-import {CommonModule} from "@angular/common";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
 
 
 
 @Component({
   selector: 'app-login-and-auth',
   standalone: true,
-  imports: [PasswordModule, FormsModule, ImageModule, ButtonModule, TranslateModule, InputTextModule, CommonModule],
+  imports: [PasswordModule, FormsModule, ImageModule, ButtonModule, TranslateModule, InputTextModule, CommonModule, RouterLinkActive, RouterLink, NgOptimizedImage],
   templateUrl: './login-and-auth.component.html',
   styleUrl: './login-and-auth.component.css',
   providers: [MessageService]
