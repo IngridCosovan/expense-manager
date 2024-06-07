@@ -42,10 +42,10 @@ export class LoginAndAuthComponent implements OnInit, DoCheck{
   }
 
   onLogin(): void {
-    if (this.authService.login(this.username, this.password)) {
-      this.router.navigate(['/dashboard']);
-    } else {
-      this.messageService.add({severity: 'error', summary: 'Error', detail: 'Invalid username or password'});
-    }
+    // if (this.authService.login(this.username, this.password)) {
+      this.router.navigate(['/home']);
+    // } else {
+    //   this.messageService.add({severity: 'error', summary: 'Error', detail: 'Invalid username or password'});
+    // }
   }
 }

@@ -1,8 +1,15 @@
-
+body {
+  margin: 0;
+  background-color: deeppink;
+}
 
 .login-box{
   margin-top: 10rem;
   display: flex;
   justify-content: center;
 }
+
+
+
+
 
