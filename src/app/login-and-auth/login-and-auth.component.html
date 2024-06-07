@@ -1,19 +1,20 @@
 <div class="login-container">
-  <h2>Login</h2>
+  <h1 class="login-title">Login</h1>
   <div>
-    <img src="../src/assets/piggy.svg" alt="Image" width="100"/>
+<!--    <img src="../src/assets/piggy.svg" alt="Image" width="100"/>-->
   </div>
   <div class="inputs">
   <div class="container">
     <h5>Username</h5>
-    <input class="username" type="text" pInputText [(ngModel)]="value1">
+    <input class="username" type="text" pInputText [(ngModel)]="username">
     </div>
   <div class="container">
     <h5>Password</h5>
-    <p-password  [(ngModel)]="value3" [toggleMask]="true"></p-password>
+    <input class="username" type="text" pInputText [(ngModel)]="password">
+<!--    <p-password  [(ngModel)]="password" [toggleMask]="true"></p-password>-->
   </div>
   </div>
   <div class="login-btn">
-    <p-button [disabled]="true" label="LOGIN"></p-button>
+    <p-button (onClick)="onLogin()" [disabled]="isDisabled" label="LOGIN"></p-button>
   </div>
 </div>
