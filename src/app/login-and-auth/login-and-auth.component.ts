@@ -1,4 +1,4 @@
-import {Component, DoCheck, OnInit, SimpleChanges} from '@angular/core';
+import {Component, DoCheck, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {PasswordModule} from 'primeng/password';
 import {FormsModule} from "@angular/forms";
 import {ImageModule} from 'primeng/image';
@@ -20,7 +20,7 @@ import {CommonModule, NgOptimizedImage} from "@angular/common";
   styleUrl: './login-and-auth.component.css',
   providers: [MessageService]
 })
-export class LoginAndAuthComponent implements OnInit, DoCheck{
+export class LoginAndAuthComponent implements OnInit, DoCheck, OnDestroy{
   password = ''
   username = '';
   isDisabled = false;
@@ -38,7 +38,11 @@ export class LoginAndAuthComponent implements OnInit, DoCheck{
 
   ngOnInit() {
     this.isDisabled = true;
+      document.body.classList.add('special-background');
+  }
 
+  ngOnDestroy() {
+    document.body.classList.remove('special-background');
   }
 
   onLogin(): void {

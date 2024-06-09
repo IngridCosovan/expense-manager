@@ -1,16 +1,17 @@
 <div class="login-page">
+  <div class="login">
 <div class="login-container">
-  <h1 class="login-title">Login</h1>
+  <img src="../assets/img/logo.svg">
+  <h3>Intra in contul tau</h3>
   <div>
-    <img src="../assets/img/piggy.svg" alt="Image" width="100"/>
   </div>
   <div class="inputs">
   <div class="container">
-    <h5>Username</h5>
+    <h5>E-mail</h5>
     <input class="username" type="text" pInputText [(ngModel)]="username">
     </div>
   <div class="container">
-    <h5>Password</h5>
+    <h5>Parola</h5>
     <input class="username" type="text" pInputText [(ngModel)]="password">
 <!--    <p-password  [(ngModel)]="password" [toggleMask]="true"></p-password>-->
   </div>
@@ -19,4 +20,8 @@
     <p-button (onClick)="onLogin()" [disabled]="isDisabled" label="LOGIN" routerLink="home"></p-button>
   </div>
 </div>
+</div>
+  <div class="login-image-container">
+    <img class="login-image" src="../assets/img/login.jpg" alt="Image"/>
+  </div>
 </div>
