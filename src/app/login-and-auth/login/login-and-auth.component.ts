@@ -5,7 +5,7 @@ import {ImageModule} from 'primeng/image';
 import {ButtonModule} from "primeng/button";
 import {TranslateModule} from '@ngx-translate/core';
 import {InputTextModule} from 'primeng/inputtext';
-import {AuthService} from "./auth.service";
+import {AuthService} from "../auth.service";
 import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {MessageService} from "primeng/api";
 import {CommonModule, NgOptimizedImage} from "@angular/common";

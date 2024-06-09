@@ -16,9 +16,15 @@
 <!--    <p-password  [(ngModel)]="password" [toggleMask]="true"></p-password>-->
   </div>
   </div>
-  <div class="login-btn">
-    <p-button (onClick)="onLogin()" [disabled]="isDisabled" label="LOGIN" routerLink="home"></p-button>
+
+  <div class="login-buttons">
+    <div class="login-btn-container">
+    <p-button (onClick)="onLogin()" [disabled]="isDisabled" label="AUTENTIFICA-TE" routerLink="home"></p-button>
+    <p>ASISTENTA: AI UITAT <a href="#parolaUitata">PAROLA</a>?</p>
+    </div>
+    <p-button class="auth-btn" (onClick)="onLogin()" [disabled]="false" label="CREEAZA UN CONT" routerLink="home"></p-button>
   </div>
+
 </div>
 </div>
   <div class="login-image-container">

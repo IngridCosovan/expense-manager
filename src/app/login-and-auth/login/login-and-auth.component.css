@@ -31,8 +31,9 @@ img {
   width: 300px !important;
 }
 
-.login-btn {
-  margin-top: 2rem;
+.login-buttons {
+  margin-top: 3rem;
+  display: flex;
 }
 
 h5 {
@@ -46,7 +47,6 @@ p-password > div > input > .p-password-input {
 
 .login-image-container {
   width: 55%;
-  background-color: white;
 }
 
 .login {
@@ -62,3 +62,14 @@ p-password > div > input > .p-password-input {
 h3 {
   color: #5B5957;
 }
+
+.login-btn-container{
+  margin-left: 6rem;
+}
+
+p{
+  font-size: 12px;
+}
+ .auth-btn{
+   margin-left: 2rem;
+ }
