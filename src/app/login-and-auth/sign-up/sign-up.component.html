@@ -1,1 +1,25 @@
-<p>sign-up works!</p>
+<div [formGroup]="signUpForm">
+  <span class="p-float-label">
+    <input id="float-input-un" type="text" pInputText formControlName="username">
+    <label for="float-input-un">Username</label>
+</span>
+  <span class="p-float-label">
+    <input id="float-input-email" type="text" pInputText formControlName="email">
+    <label for="float-input-email">Email</label>
+</span>
+
+  <div class="password">
+    <p>Parola</p>
+  <p-password formControlName="password" [toggleMask]="true"></p-password>
+  </div>
+
+<div class="password">
+  <p>Confirma parola</p>
+  <p-password  class="password" formControlName="passwordConfirmation" [toggleMask]="true"></p-password>
+  <div *ngIf="signUpForm.get('passwordConfirmation')?.invalid && signUpForm.get('passwordConfirmation')?.touched">
+    <div *ngIf="signUpForm.hasError('passwordMismatch')">
+      Passwords do not match.
+    </div>
+  </div>
+  </div>
+</div>

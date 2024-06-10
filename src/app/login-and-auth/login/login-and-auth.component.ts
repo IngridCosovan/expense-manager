@@ -52,4 +52,9 @@ export class LoginAndAuthComponent implements OnInit, DoCheck, OnDestroy{
     //   this.messageService.add({severity: 'error', summary: 'Error', detail: 'Invalid username or password'});
     // }
   }
+
+  onSignUp(): void {
+    this.router.navigate(['/sign-up']);
+
+  }
 }
