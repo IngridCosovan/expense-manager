@@ -6,11 +6,12 @@ import {
   PasswordValidatorService,
 } from "../../shared/password-validator.service";
 import {CommonModule} from "@angular/common";
+import {ButtonModule} from "primeng/button";
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, InputTextModule, PasswordModule, CommonModule],
+  imports: [ReactiveFormsModule, FormsModule, InputTextModule, PasswordModule, CommonModule, ButtonModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
