@@ -1,4 +1,4 @@
-import {Component, DoCheck, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {Component, DoCheck, OnDestroy, OnInit} from '@angular/core';
 import {PasswordModule} from 'primeng/password';
 import {FormsModule} from "@angular/forms";
 import {ImageModule} from 'primeng/image';
