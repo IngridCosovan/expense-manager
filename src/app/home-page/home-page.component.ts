@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {TabMenuComponent} from '../home-page/tab-menu/tab-menu.component';
 import {InplaceModule} from "primeng/inplace";
 
@@ -11,7 +11,8 @@ import {InplaceModule} from "primeng/inplace";
     InplaceModule
   ],
   templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.css'
+  styleUrl: './home-page.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomePageComponent {
 

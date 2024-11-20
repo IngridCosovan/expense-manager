@@ -2,12 +2,20 @@
   display: flex;
  align-items: center;
   justify-content: space-between;
+  width: 30rem;
 }
 
 .login-btn {
-  margin-left: 3rem;
+  margin-left: 5rem;
 }
 
-.logo{
-  margin-left: 3rem;
+.p-button{
+  color: #ffffff;
+  background: #5997cc;
+  border: 1px solid #5997cc;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  border-radius: 23px;
+  width: 8rem;
 }
