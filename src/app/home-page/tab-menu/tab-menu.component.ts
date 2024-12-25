@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {TabMenuModule} from "primeng/tabmenu";
 import {MenuItem} from "primeng/api";
 
@@ -9,7 +9,8 @@ import {MenuItem} from "primeng/api";
     TabMenuModule
   ],
   templateUrl: './tab-menu.component.html',
-  styleUrl: './tab-menu.component.css'
+  styleUrl: './tab-menu.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class TabMenuComponent implements OnInit{
   items: MenuItem[] = [];

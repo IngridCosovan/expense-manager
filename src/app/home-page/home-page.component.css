@@ -1,15 +1,21 @@
 .header {
   display: flex;
- align-items: center;
   justify-content: space-between;
-  width: 30rem;
+  margin: 1rem 0 1rem 0;
+}
+
+.divider {
+  /*width: 100vw;*/
+  height: 1px;
+  background-color: #ccc;
+  margin-top: 10px;
 }
 
 .login-btn {
-  margin-left: 5rem;
+  margin: 0 2rem 0 3rem;
 }
 
-.p-button{
+.p-button {
   color: #ffffff;
   background: #5997cc;
   border: 1px solid #5997cc;
@@ -18,4 +24,24 @@
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
   border-radius: 23px;
   width: 8rem;
+}
+
+.tab-menu-container{
+  display: flex;
+}
+
+.logo{
+  margin-left: 2rem;
+}
+
+.left, .right {
+  width: 50%;
+  float: left;
+  text-align: center;
+  padding: 10px;
+}
+
+.body-image {
+  width: 49rem;
+  height: 49rem;
 }
