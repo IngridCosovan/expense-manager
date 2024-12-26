@@ -1,6 +1,11 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, signal, ViewEncapsulation} from '@angular/core';
 import {TabMenuComponent} from '../home-page/tab-menu/tab-menu.component';
 import {InplaceModule} from "primeng/inplace";
+import {NgStyle} from "@angular/common";
+import {animate, state, style, transition, trigger} from "@angular/animations";
+import {LoginAndAuthComponent} from "../login-and-auth/login/login-and-auth.component";
+import {DialogModule} from "primeng/dialog";
+import {InputTextModule} from "primeng/inputtext";
 
 
 @Component({
@@ -8,49 +13,47 @@ import {InplaceModule} from "primeng/inplace";
   standalone: true,
   imports: [
     TabMenuComponent,
-    InplaceModule
+    InplaceModule,
+    NgStyle,
+    LoginAndAuthComponent,
+    DialogModule,
+    InputTextModule,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
   encapsulation: ViewEncapsulation.None,
+  animations: [
+    trigger(
+      'slideView',
+      [
+        state('true', style({transform: 'translateX(100%)', opacity: 0})),
+        state('false', style({transform: 'translateX(0)', opacity: 1})),
+        transition('0 => 1', animate('500ms', style({transform: 'translateX(0)', 'opacity': 1}))),
+        transition('1 => 1', animate('500ms', style({transform: 'translateX(100%)', 'opacity': 0}))),
+      ]),
+
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({transform: 'translateX(100%)', opacity: 0}),
+        animate('600ms ease-in', style({transform: 'translateX(0%)', 'opacity': 1}))
+      ]),
+
+      transition(':leave', [
+        style({transform: 'translateX(0%)', opacity: 1}),
+        animate('0ms ease-in', style({transform: 'translateX(100%)', 'opacity': 0}))
+      ])
+    ])
+  ]
 })
-export class HomePageComponent  implements OnInit {
-  currentText = 'Textul inițial (portocaliu)';
-  currentBackground = 'orange';
-  currentTextColor = 'white';
-  showText = true;
+export class HomePageComponent {
+  state = false;
+  isLoginDialogOpen = signal(false)
 
-  private orangeState = {
-    text: 'Textul inițial (portocaliu)',
-    background: 'orange',
-    color: 'white'
-  };
-
-  private blueState = {
-    text: 'Textul secundar (albastru)',
-    background: 'blue',
-    color: 'white'
-  };
-
-  private states = [this.orangeState, this.blueState];
-  private currentIndex = 0;
-
-  ngOnInit(): void {
-    setInterval(() => {
-      this.toggleState();
-    }, 15000);
+  openLoginDialog() {
+    this.isLoginDialogOpen.set(true);
   }
 
-  toggleState(): void {
-    this.showText = false;
-    setTimeout(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.states.length;
-      const newState = this.states[this.currentIndex];
-
-      this.currentText = newState.text;
-      this.currentBackground = newState.background;
-      this.currentTextColor = newState.color;
-      this.showText = true;
-    }, 1000);
+  showDialog() {
+    this.state = true;
   }
 }

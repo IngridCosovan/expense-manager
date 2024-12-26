@@ -1,38 +1,57 @@
-<div class="login-page">
-  <div class="login">
-<div class="login-container">
-  <img src="../assets/img/logo.svg">
-  <h3>Intra in contul tau</h3>
-  <div>
-  </div>
-  <div class="inputs">
-  <div class="container">
-    <h5>E-mail</h5>
-    <input class="username" type="text" pInputText [(ngModel)]="username">
-    </div>
-  <div class="container">
-    <h5>Parola</h5>
-    <input class="username" type="text" pInputText [(ngModel)]="password">
-<!--    <p-password  [(ngModel)]="password" [toggleMask]="true"></p-password>-->
-  </div>
-  </div>
+<!--<div class="login-page">-->
+<!--  <div class="login">-->
+<!--<div class="login-container">-->
+<!--  <img src="../assets/img/logo.svg">-->
+<!--  <h3>Intra in contul tau</h3>-->
+<!--  <div>-->
+<!--  </div>-->
+<!--  <div class="inputs">-->
+<!--  <div class="container">-->
+<!--    <h5>E-mail</h5>-->
+<!--    <input class="username" type="text" pInputText [(ngModel)]="username">-->
+<!--    </div>-->
+<!--  <div class="container">-->
+<!--    <h5>Parola</h5>-->
+<!--    <input class="username" type="text" pInputText [(ngModel)]="password">-->
+<!--&lt;!&ndash;    <p-password  [(ngModel)]="password" [toggleMask]="true"></p-password>&ndash;&gt;-->
+<!--  </div>-->
+<!--  </div>-->
 
-  <div class="login-buttons">
-    <div class="login-btn-container">
-    <p-button (onClick)="onLogin()" [disabled]="isDisabled" label="AUTENTIFICA-TE" routerLink="home"></p-button>
-    <p>ASISTENTA: AI UITAT <a href="#parolaUitata">PAROLA</a>?</p>
-    </div>
-    <p-button class="auth-btn" (onClick)="onSignUp()" [disabled]="false" label="CREEAZA UN CONT" routerLink="home"></p-button>
-  </div>
+<!--  <div class="login-buttons">-->
+<!--    <div class="login-btn-container">-->
+<!--    <p-button (onClick)="onLogin()" [disabled]="isDisabled" label="AUTENTIFICA-TE" routerLink="home"></p-button>-->
+<!--    <p>ASISTENTA: AI UITAT <a href="#parolaUitata">PAROLA</a>?</p>-->
+<!--    </div>-->
+<!--    <p-button class="auth-btn" (onClick)="onSignUp()" [disabled]="false" label="CREEAZA UN CONT" routerLink="home"></p-button>-->
+<!--  </div>-->
 
-</div>
-</div>
-  <div class="login-image-container">
-    <img class="login-image" src="../assets/img/login.jpg" alt="Image"/>
-    @if(signUpClicked) {
-    <div class="sign-up">
-      <app-sign-up></app-sign-up>
-    </div>
-    }
+<!--</div>-->
+<!--</div>-->
+<!--  <div class="login-image-container">-->
+<!--    <img class="login-image" src="../assets/img/login.jpg" alt="Image"/>-->
+<!--    @if(signUpClicked) {-->
+<!--    <div class="sign-up">-->
+<!--      <app-sign-up></app-sign-up>-->
+<!--    </div>-->
+<!--    }-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<p-dialog header="Login" [draggable]="false"
+          [resizable]="false" [(visible)]="visible" [style]="{ width: '35rem' }">
+  <div class="flex align-items-center gap-3 mb-3">
+    <label for="username" class="font-semibold w-6rem">E-mail</label>
+    <input pInputText id="username" class="flex-auto" autocomplete="off"/>
   </div>
-</div>
+  <div class="flex align-items-center gap-3 mb-5">
+    <label for="email" class="font-semibold w-6rem">Password</label>
+    <input pInputText id="email" class="flex-auto" autocomplete="off"/>
+    <span><a>Forgot your password?</a></span>
+  </div>
+  <div>{{ visible }}</div>
+  <div class="flex justify-content-end gap-2">
+    <p-button label="Cancel" severity="secondary" (onClick)="visible = false"/>
+    <p-button label="Save" (onClick)="visible = false"/>
+  </div>
+</p-dialog>

@@ -1,7 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {RouterLinkActive, RouterOutlet} from '@angular/router';
-import { LoginAndAuthComponent } from './login-and-auth/login/login-and-auth.component';
-import {RouterModule} from "@angular/router";
+import {RouterLinkActive, RouterOutlet, RouterModule} from '@angular/router';
+import {LoginAndAuthComponent} from './login-and-auth/login/login-and-auth.component';
 
 
 @Component({

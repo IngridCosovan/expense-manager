@@ -1,4 +1,4 @@
-import {Component, DoCheck, OnDestroy, OnInit} from '@angular/core';
+import {Component, DoCheck, Input, OnDestroy, OnInit} from '@angular/core';
 import {PasswordModule} from 'primeng/password';
 import {FormsModule} from "@angular/forms";
 import {ImageModule} from 'primeng/image';
@@ -10,13 +10,14 @@ import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {MessageService} from "primeng/api";
 import {CommonModule, NgOptimizedImage} from "@angular/common";
 import {SignUpComponent} from "../sign-up/sign-up.component";
+import {DialogModule} from "primeng/dialog";
 
 
 
 @Component({
   selector: 'app-login-and-auth',
   standalone: true,
-  imports: [PasswordModule, FormsModule, ImageModule, ButtonModule, TranslateModule, InputTextModule, CommonModule, RouterLinkActive, RouterLink, NgOptimizedImage, SignUpComponent],
+  imports: [PasswordModule, FormsModule, ImageModule, ButtonModule, TranslateModule, InputTextModule, CommonModule, RouterLinkActive, RouterLink, NgOptimizedImage, SignUpComponent, DialogModule],
   templateUrl: './login-and-auth.component.html',
   styleUrl: './login-and-auth.component.css',
   providers: [MessageService]
@@ -26,6 +27,9 @@ export class LoginAndAuthComponent implements OnInit, DoCheck, OnDestroy{
   username = '';
   isDisabled = false;
   signUpClicked  = false;
+  @Input()visible: boolean = false;
+
+
 
   constructor(private authService: AuthService, private router: Router, private messageService: MessageService) {
   }

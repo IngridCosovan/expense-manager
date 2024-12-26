@@ -34,14 +34,41 @@
   margin-left: 2rem;
 }
 
-.left, .right {
+.home-body-container{
+  display: flex;
+}
+
+.right {
   width: 50%;
   float: left;
   text-align: center;
   padding: 10px;
 }
 
+.left {
+  width: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 1s ease, color 1s ease; /* Tranziție pentru schimbarea stilurilor */
+}
+
 .body-image {
   width: 49rem;
   height: 49rem;
+}
+
+#slideDiv, #hiddenDiv {
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  color: white;
+  background-color: lightcoral;
+  margin-bottom: 10px;
+}
+
+#hiddenDiv {
+  background-color: lightblue;
 }
