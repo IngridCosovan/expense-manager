@@ -1,88 +1,22 @@
-.login-page {
-  display: flex;
-}
-
-img {
-  margin-bottom: 3rem
-}
-
-.login-container {
-  position: relative;
-  top: 8rem;
+.input-container {
   display: flex;
   flex-direction: column;
-  align-content: center;
-  align-items: center;
-  justify-content: space-evenly;
-  border-radius: 10px;
+  margin: 2rem;
+
 }
 
-.password-container {
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-}
-
-.username {
-  width: 300px !important;
-}
-
-.password {
-  width: 300px !important;
-}
-
-.login-buttons {
-  margin-top: 3rem;
-  display: flex;
-}
-
-h5 {
-  color: #5B5957;
-  margin-bottom: 7px;
-}
-
-p-password > div > input > .p-password-input {
-  width: 19rem !important;
-}
-
-.login-image-container {
+.sign-up-link {
   position: relative;
-  display: inline-block;
-  /*display:flex;*/
-  width: 55%;
+  bottom: 1.3rem;
+  left: 30px;
 }
 
-.login {
-  width: 45%;
+.p-dialog .p-dialog-content {
+  padding: 0 !important;
 }
 
-.login-image {
-  position: relative;
-  top: 8rem;
-  width: 60rem;
-  z-index: 1;
-}
-
-h3 {
-  color: #5B5957;
-}
-
-.login-btn-container {
-  margin-left: 6rem;
-}
-
-p {
-  font-size: 12px;
-  font-family: "Berlin Sans FB Demi";
-}
-
-.auth-btn {
-  margin-left: 2rem;
-}
-
-.sign-up{
-  position: absolute;
- z-index: 3;
-  bottom: -1rem;
-  left: 25rem;
+.sign-in-btn, .sign-up-link-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }

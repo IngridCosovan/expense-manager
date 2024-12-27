@@ -1,4 +1,4 @@
-import {Component, DoCheck, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, DoCheck, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {PasswordModule} from 'primeng/password';
 import {FormsModule} from "@angular/forms";
 import {ImageModule} from 'primeng/image';
@@ -20,6 +20,7 @@ import {DialogModule} from "primeng/dialog";
   imports: [PasswordModule, FormsModule, ImageModule, ButtonModule, TranslateModule, InputTextModule, CommonModule, RouterLinkActive, RouterLink, NgOptimizedImage, SignUpComponent, DialogModule],
   templateUrl: './login-and-auth.component.html',
   styleUrl: './login-and-auth.component.css',
+  encapsulation: ViewEncapsulation.None,
   providers: [MessageService]
 })
 export class LoginAndAuthComponent implements OnInit, DoCheck, OnDestroy{
