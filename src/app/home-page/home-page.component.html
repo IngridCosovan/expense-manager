@@ -1,6 +1,5 @@
 <div class="header">
   <div class="logo"> <img src="../assets/img/logo-tabmenu.svg"></div>
-
   <div class="tab-menu-container">
   <app-tab-menu></app-tab-menu>
   <p-button class="login-btn" label="Login" (onClick)="showDialog()"></p-button>
@@ -10,16 +9,7 @@
 <div class="home-body-container">
   <div class="left"
   >
-<!--      <p-button (click)="toggle($event)">Toggle</p-button>-->
-<!--    @if(show){-->
-<!--    <div style="height: 300px; border: 1px solid red"  [@slideInOut]> IN </div>-->
-<!--    } @else{-->
-<!--    <div style="height: 300px; border: 1px solid red" [@slideInOut]> OUT </div>-->
-<!--        }-->
     </div>
   <div class="right"><img class="body-image" src="../assets/img/landing-page.png"></div>
   </div>
-
-<app-login-and-auth [visible]="state"></app-login-and-auth>
-
-
+<app-login-and-auth [(visible)]="state"></app-login-and-auth>

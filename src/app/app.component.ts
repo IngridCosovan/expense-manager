@@ -6,7 +6,7 @@ import {LoginAndAuthComponent} from './login-and-auth/login/login-and-auth.compo
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoginAndAuthComponent, RouterModule, RouterLinkActive],
+  imports: [RouterOutlet, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   encapsulation: ViewEncapsulation.None,

@@ -5,7 +5,7 @@
 }
 
 .divider {
-  /*width: 100vw;*/
+  width: 100vw;
   height: 1px;
   background-color: #ccc;
   margin-top: 10px;
@@ -51,7 +51,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background 1s ease, color 1s ease; /* Tranziție pentru schimbarea stilurilor */
 }
 
 .body-image {
@@ -59,16 +58,3 @@
   height: 46rem;
 }
 
-#slideDiv, #hiddenDiv {
-  width: 200px;
-  height: 100px;
-  text-align: center;
-  line-height: 100px;
-  color: white;
-  background-color: lightcoral;
-  margin-bottom: 10px;
-}
-
-#hiddenDiv {
-  background-color: lightblue;
-}
