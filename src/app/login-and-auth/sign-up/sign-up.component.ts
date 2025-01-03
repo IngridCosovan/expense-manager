@@ -7,15 +7,17 @@ import {
 } from "../../shared/password-validator.service";
 import {CommonModule} from "@angular/common";
 import {ButtonModule} from "primeng/button";
+import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, InputTextModule, PasswordModule, CommonModule, ButtonModule],
+  imports: [ReactiveFormsModule, FormsModule, InputTextModule, PasswordModule, CommonModule, ButtonModule, DialogModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent implements OnInit{
+  signupDialogIsVisible = false;
   signUpForm: FormGroup;
 
   constructor(private passwordValidator: PasswordValidatorService) {
@@ -34,5 +36,9 @@ export class SignUpComponent implements OnInit{
     if (this.signUpForm.valid) {
       console.log(this.signUpForm.value);
     }
+  }
+
+  closeDialog(){
+    this.signupDialogIsVisible = false;
   }
 }

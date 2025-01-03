@@ -1,4 +1,3 @@
-{{visible}}
 <p-dialog header="Login" [draggable]="false"
           [resizable]="false" [(visible)]="visible" [style]="{ width: '25rem', height:'40rem' }" (onHide)="closeDialog()">
   <div class="input-container">
@@ -15,6 +14,7 @@
     <p-button class="sign-in-btn" label="Sign in" severity="secondary" (onClick)="visible = false"/>
   </div>
   <div class="sign-up-link-container">
-    <p>You don't have an account?</p><a href="https://angular.dev/" target="_blank" rel="noopener noreferrer" class="signup-link font-bold">Signup now!</a>
+    <p>You don't have an account?</p><a href="#" class="signup-link font-bold button-link" (click)="openSignupDialog($event)">Signup now!</a>
   </div>
 </p-dialog>
+<app-sign-up></app-sign-up>
