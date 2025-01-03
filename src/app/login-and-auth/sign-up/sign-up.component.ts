@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {InputTextModule} from "primeng/inputtext";
 import {PasswordModule} from "primeng/password";
@@ -17,6 +17,7 @@ import { DialogModule } from 'primeng/dialog';
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent implements OnInit{
+  @Input()visible: boolean = false;
   signupDialogIsVisible = false;
   signUpForm: FormGroup;
 

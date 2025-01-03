@@ -22,10 +22,10 @@ import {InputTextModule} from "primeng/inputtext";
 })
 export class HomePageComponent {
   visible= false;
-  state = false;
+  stateSignInDialog = false;
 
   showDialog() {
-    this.state=true;
+    this.stateSignInDialog=true;
   }
 
   closeDialog() {

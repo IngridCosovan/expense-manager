@@ -15,7 +15,7 @@
   padding: 0 !important;
 }
 
-.sign-in-btn, .sign-up-link-container {
+.sign-in-btn, .sign-up-link-container, .submit-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,4 +24,40 @@
 
 .signup-link {
 margin-left: 1rem;
+}
+
+.form {
+  width: 20rem;
+  height: 30rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.form-container {
+  margin-left: 2rem;
+}
+
+.p-float-label {
+  margin-top: 2rem;
+}
+
+.label {
+  margin-bottom: 0rem;
+  color: #6C757D;
+}
+
+.submit-btn {
+  margin-top: 2rem;
+}
+
+.input {
+  width: 21rem;
+}
+
+.p-input-icon-right > .p-inputtext {
+  padding-right: 2.5rem;
+  width: 21rem;
 }
