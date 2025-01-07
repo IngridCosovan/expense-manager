@@ -1,7 +1,4 @@
-<p-dialog header="Login" [draggable]="false"
-          [resizable]="false" [(visible)]="signupDialogIsVisible" [style]="{ width: '25rem', height:'40rem' }" (onHide)="closeDialog()">
-          <div class="form" [formGroup]="signUpForm">
-  <div class="form-container">
+<div class="form-container">
   <span class="p-float-label">
     <input id="float-input-un" type="text" pInputText formControlName="username">
     <label for="float-input-un">Username</label>
@@ -29,5 +26,3 @@
     <button pButton type="button" label="Submit" (click)="onSubmit()"></button>
   </div>
 </div>
-</div>
-</p-dialog>

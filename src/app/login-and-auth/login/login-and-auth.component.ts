@@ -9,13 +9,14 @@ import {MessageService} from "primeng/api";
 import {CommonModule} from "@angular/common";
 import {DialogModule} from "primeng/dialog";
 import { PasswordValidatorService } from '../../shared/password-validator.service';
+import { SignUpComponent } from "../sign-up/sign-up.component";
 
 
 
 @Component({
   selector: 'app-login-and-auth',
   standalone: true,
-  imports: [PasswordModule, FormsModule, ImageModule, ButtonModule, TranslateModule, InputTextModule, CommonModule, DialogModule, ReactiveFormsModule],
+  imports: [PasswordModule, FormsModule, ImageModule, ButtonModule, TranslateModule, InputTextModule, CommonModule, DialogModule, ReactiveFormsModule, SignUpComponent],
   templateUrl: './login-and-auth.component.html',
   styleUrl: './login-and-auth.component.css',
   encapsulation: ViewEncapsulation.None,

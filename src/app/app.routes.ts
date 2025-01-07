@@ -4,7 +4,9 @@ import {LoginAndAuthComponent} from "./login-and-auth/login/login-and-auth.compo
 import {SignUpComponent} from "./login-and-auth/sign-up/sign-up.component";
 
 export const routes: Routes = [
-  { path: 'login', component: LoginAndAuthComponent, title: 'Login Page'},
-  { path: 'home', component: HomePageComponent, title: 'Home Page' },
-  { path: 'sign-up', component: SignUpComponent, title: 'Sign Up' },
+  { path: 'home', component: HomePageComponent },
+  { path: 'features', component: HomePageComponent},
+  { path: 'pricing', component: HomePageComponent},
+  { path: 'about', component: HomePageComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
