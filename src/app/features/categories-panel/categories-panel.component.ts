@@ -4,6 +4,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {
   CategoriesFormsService
 } from "../categories-panel/categories-panel-services/categories-forms.service";
+import {ChipsModule} from "primeng/chips";
 
 @Component({
   selector: 'app-categories',
@@ -11,6 +12,7 @@ import {
   imports: [
     ButtonModule,
     ReactiveFormsModule,
+    ChipsModule,
   ],
   templateUrl: './categories-panel.component.html',
   styleUrl: './categories-panel.component.css'
