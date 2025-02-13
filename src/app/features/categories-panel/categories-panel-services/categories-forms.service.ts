@@ -11,7 +11,7 @@ export class CategoriesFormsService {
 
   $categoryCreationForm = signal(
     new FormGroup({
-      title: new FormControl<string | null>(null, emptyInputValidator),
+      name: new FormControl<string | null>(null, emptyInputValidator),
     })
   );
   $isCreating = signal(false);

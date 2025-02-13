@@ -4,10 +4,10 @@
           (ngSubmit)="createCategory($event)"
           data-qa="category-panel-category-creation-form">
       <div class="input" data-qa="category-title">
-        <div [class.missing-input]="categoriesFormsService.$categoryCreationForm().controls['title'].invalid"
+        <div [class.missing-input]="categoriesFormsService.$categoryCreationForm().controls['name'].invalid"
              class="category-detail-input"
              data-qa="category-panel-category-title-input">
-          <i class="pi pi-plus" style="font-size: 1rem"></i>
+          <i class="pi pi-plus creation-icon"></i>
           <input
             type="text"
             pInputText
@@ -17,7 +17,7 @@
             [placeholder]="'Category'"
             class="text-input"
             data-qa="category-panel-text-input-rc-title"
-            formControlName="title"
+            formControlName="name"
           />
 
           <!--        [appCharacterLimit]="categoryPanelConstants().categoryEditInputMaxLength"-->
@@ -38,8 +38,8 @@
   </div>
 } @else {
   <div class="cursor-pointer create-button" (click)="setCreating()">
-    <i class="pi pi-plus" style="font-size: 1rem"></i>
-    <div class="creation-label">{{ 'Create Category' }}</div>
+    <i class="pi pi-plus creation-icon"></i>
+    <div>{{ 'Create Category' }}</div>
   </div>
 }
 
