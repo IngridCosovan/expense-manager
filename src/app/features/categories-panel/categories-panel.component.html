@@ -1,41 +1,48 @@
-<div data-qa="category-creation-button-form" class="creation-button-form">
-  <form class="form-container" [formGroup]="categoriesFormsService.$categoryCreationForm()"
-        (ngSubmit)="createCategory($event)"
-        data-qa="category-panel-category-creation-form">
-    <!--    <span class="boschicon-bosch-ic-add add-icon cursor-pointer" data-qa="category-creation-form-icon"></span>-->
-    <div class="input" data-qa="category-title">
-      <div [class.missing-input]="categoriesFormsService.$categoryCreationForm().controls['title'].invalid"
-           class="category-detail-input"
-           data-qa="category-panel-category-title-input">
-        <input
-          inputId="create-category"
-          pAutoFocus
-          [autofocus]="true"
-          (keydown.enter)="createCategory($event)"
-          [placeholder]="'Category'"
-          class="text-input"
-          data-qa="category-panel-text-input-rc-title"
-          formControlName="title"
-        />
+<!--@if (categoriesFormsService.$isCreating) {-->
+  <div data-qa="category-creation-button-form" class="creation-button-form">
+    <form class="form-container" [formGroup]="categoriesFormsService.$categoryCreationForm()"
+          (ngSubmit)="createCategory($event)"
+          data-qa="category-panel-category-creation-form">
+      <div class="input" data-qa="category-title">
+        <div [class.missing-input]="categoriesFormsService.$categoryCreationForm().controls['title'].invalid"
+             class="category-detail-input"
+             data-qa="category-panel-category-title-input">
+          <input
+            type="text"
+            inputId="create-category"
+            [autofocus]="true"
+            (keydown.enter)="createCategory($event)"
+            [placeholder]="'Category'"
+            class="text-input"
+            data-qa="category-panel-text-input-rc-title"
+            formControlName="title"
+          />
 
-        <!--        [appCharacterLimit]="categoryPanelConstants().rcEditInputMaxLength"-->
+          <!--        [appCharacterLimit]="categoryPanelConstants().categoryEditInputMaxLength"-->
+        </div>
       </div>
-    </div>
-    <div class="buttons" data-qa="category-panel-category-creation-buttons">
-      <!--      [label]="'LABEL.CONFIRM' | translate"-->
-      <!--      [submit]="true"-->
-      <p-button
-        [disabled]="categoriesFormsService.$categoryCreationForm().invalid"
+      <div class="buttons" data-qa="category-panel-category-creation-buttons">
+        <p-button
+          [disabled]="categoriesFormsService.$categoryCreationForm().invalid"
+          [label]="'Confirm'"
+          type="submit"
+          data-qa="category-panel-button-confirm-creation"
+        />
+        <p-button
+          (onClick)="cancelCreation($event)"
+          [label]="'Cancel'"
+          data-qa="category-panel-button-cancel-creation"
+        />
+      </div>
+    </form>
+  </div>
+<!--} @else {-->
+  <div class="cursor-pointer create-button" (click)="setCreating()">
+<!--    <p-iconField iconPosition="left">-->
+<!--      <p-inputIcon styleClass="pi pi-search"></p-inputIcon>-->
+<!--      <input type="text" pInputText placeholder="Search" />-->
+<!--    </p-iconField>-->
+    <div>{{'Create Category'}}</div>
+  </div>
+<!--}-->
 
-
-        data-qa="category-panel-button-confirm-creation"
-      />
-      <!--      [label]="'LABEL.CANCEL' | translate"-->
-      <!--      (onClick)="cancelCreation($event)"-->
-      <p-button
-
-        data-qa="category-panel-button-cancel-creation"
-      />
-    </div>
-  </form>
-</div>

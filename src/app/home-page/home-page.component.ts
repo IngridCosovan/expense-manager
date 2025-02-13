@@ -6,6 +6,7 @@ import {DialogModule} from "primeng/dialog";
 import {InputTextModule} from "primeng/inputtext";
 import { Router , NavigationEnd, RouterOutlet} from '@angular/router';
 import { CommonModule } from '@angular/common';
+import {Button} from "primeng/button";
 
 
 @Component({
@@ -18,7 +19,8 @@ import { CommonModule } from '@angular/common';
     DialogModule,
     InputTextModule,
     CommonModule,
-    RouterOutlet
+    RouterOutlet,
+    Button
 
   ],
   templateUrl: './home-page.component.html',

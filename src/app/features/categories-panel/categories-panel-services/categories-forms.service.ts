@@ -14,4 +14,20 @@ export class CategoriesFormsService {
       title: new FormControl<string | null>(null, emptyInputValidator),
     })
   );
+  $isCreating = signal(false);
+
+  createCategory(event: Event) {
+    event.stopPropagation();
+    if (this.$categoryCreationForm().invalid) {
+      return;
+    }
+    // this.categoryPanelService.createNewRC(this.$categoryCreationForm());
+
+    this.resetCreating();
+  }
+
+  resetCreating() {
+    this.$isCreating.set(false);
+    this.$categoryCreationForm().reset();
+  }
 }

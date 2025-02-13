@@ -1,17 +1,16 @@
-import { Component } from '@angular/core';
+import { Component , signal} from '@angular/core';
 import {ButtonModule} from "primeng/button";
 import {ReactiveFormsModule} from "@angular/forms";
 import {
   CategoriesFormsService
 } from "../categories-panel/categories-panel-services/categories-forms.service";
 
-
 @Component({
   selector: 'app-categories',
   standalone: true,
   imports: [
     ButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   templateUrl: './categories-panel.component.html',
   styleUrl: './categories-panel.component.css'
@@ -21,6 +20,15 @@ export class CategoriesPanelComponent {
   }
 
   createCategory(event: Event) {
-    // this.categoriesFormsService.createCategory(event);
+    this.categoriesFormsService.createCategory(event);
+  }
+
+  cancelCreation(event: Event) {
+    event.stopPropagation();
+    this.categoriesFormsService.resetCreating();
+  }
+
+  setCreating() {
+    this.categoriesFormsService.$isCreating.set(true);
   }
 }
