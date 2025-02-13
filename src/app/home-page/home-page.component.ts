@@ -1,11 +1,11 @@
-import {Component, signal, ViewEncapsulation} from '@angular/core';
+import { LoginAndAuthComponent } from './../login-and-auth/login/login-and-auth.component';
+import {ChangeDetectorRef, Component, DoCheck, OnInit, ViewEncapsulation} from '@angular/core';
 import {TabMenuComponent} from '../home-page/tab-menu/tab-menu.component';
 import {InplaceModule} from "primeng/inplace";
-import {NgStyle} from "@angular/common";
-import {animate, state, style, transition, trigger} from "@angular/animations";
-import {LoginAndAuthComponent} from "../login-and-auth/login/login-and-auth.component";
 import {DialogModule} from "primeng/dialog";
 import {InputTextModule} from "primeng/inputtext";
+import { Router , NavigationEnd, RouterOutlet} from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -13,47 +13,47 @@ import {InputTextModule} from "primeng/inputtext";
   standalone: true,
   imports: [
     TabMenuComponent,
-    InplaceModule,
-    NgStyle,
     LoginAndAuthComponent,
+    InplaceModule,
     DialogModule,
     InputTextModule,
+    CommonModule,
+    RouterOutlet
+
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
   encapsulation: ViewEncapsulation.None,
-  animations: [
-    trigger(
-      'slideView',
-      [
-        state('true', style({transform: 'translateX(100%)', opacity: 0})),
-        state('false', style({transform: 'translateX(0)', opacity: 1})),
-        transition('0 => 1', animate('500ms', style({transform: 'translateX(0)', 'opacity': 1}))),
-        transition('1 => 1', animate('500ms', style({transform: 'translateX(100%)', 'opacity': 0}))),
-      ]),
-
-    trigger('slideInOut', [
-      transition(':enter', [
-        style({transform: 'translateX(100%)', opacity: 0}),
-        animate('600ms ease-in', style({transform: 'translateX(0%)', 'opacity': 1}))
-      ]),
-
-      transition(':leave', [
-        style({transform: 'translateX(0%)', opacity: 1}),
-        animate('0ms ease-in', style({transform: 'translateX(100%)', 'opacity': 0}))
-      ])
-    ])
-  ]
 })
-export class HomePageComponent {
-  state = false;
-  isLoginDialogOpen = signal(false)
+export class HomePageComponent implements OnInit{
+  visible= false;
+  stateSignInDialog = false;
+  currentRoute='';
+  test = false;
 
-  openLoginDialog() {
-    this.isLoginDialogOpen.set(true);
+  constructor(private router: Router, private cdr:ChangeDetectorRef){}
+
+  ngOnInit(): void {
+    console.log('test');
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.urlAfterRedirects;
+        this.cdr.detectChanges();
+        console.log(this.currentRoute);
+      }
+    });
   }
 
   showDialog() {
-    this.state = true;
+    this.stateSignInDialog=true;
+  }
+
+  closeDialog() {
+    this.visible = false;
+  }
+
+  receiveSeletedTab(event: Event){
+    console.log(event);
   }
 }

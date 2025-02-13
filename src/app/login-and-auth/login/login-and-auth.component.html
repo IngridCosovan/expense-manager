@@ -1,5 +1,5 @@
 <p-dialog header="Login" [draggable]="false"
-          [resizable]="false" [(visible)]="visible" [style]="{ width: '25rem', height:'40rem' }">
+          [resizable]="false" [(visible)]="visible" [style]="{ width: '25rem', height:'40rem' }" (onHide)="closeDialog()">
   <div class="input-container">
     <label for="username" class="font-semibold">E-mail</label>
     <input pInputText id="username" class="flex-auto" autocomplete="off"/>
@@ -8,13 +8,48 @@
     <label for="email" class="font-semibold">Password</label>
     <input pInputText id="email" class="flex-auto" autocomplete="off"/>
   </div>
-  <a href="https://angular.dev/" target="_blank" rel="noopener noreferrer" class="sign-up-link font-bold">Forgot your
+  <a href="https://angular.dev/" target="_blank" rel="noopener noreferrer" class="forgot-pass font-bold">Forgot your
     password?</a>
   <div class="sign-in-btn-container">
-    <p-button class="sign-in-btn" label="Cancel" severity="secondary" (onClick)="visible = false"/>
+    <p-button class="sign-in-btn" label="Sign in" severity="secondary" (onClick)="visible = false"/>
   </div>
   <div class="sign-up-link-container">
-    <a href="https://angular.dev/" target="_blank" rel="noopener noreferrer" class="sign-up-link font-bold">Forgot your
-      password?</a>
+    <p>You don't have an account?</p><a href="#" class="signup-link font-bold button-link" (click)="openSignupDialog($event)">Signup now!</a>
   </div>
 </p-dialog>
+
+
+<p-dialog header="Signup" [draggable]="false"
+          [resizable]="false" [(visible)]="signUpIsOpen" [style]="{ width: '25rem', height:'40rem' }" (onHide)="closeDialog()">
+          <div class="form" [formGroup]="signUpForm">
+  <div class="form-container">
+  <span class="p-float-label">
+    <input class="input" id="float-input-un" type="text" pInputText formControlName="username">
+    <label for="float-input-un">Username</label>
+</span>
+  <span class="p-float-label">
+    <input class="input" id="float-input-email" type="text" pInputText formControlName="email">
+    <label for="float-input-email">Email</label>
+</span>
+
+  <div class="password">
+    <p class="label">Parola</p>
+  <p-password formControlName="password" [toggleMask]="true"></p-password>
+  </div>
+
+<div class="password">
+  <p class="label">Confirma parola</p>
+  <p-password  class="password" formControlName="passwordConfirmation" [toggleMask]="true"></p-password>
+  <div *ngIf="signUpForm.get('passwordConfirmation')?.invalid && signUpForm.get('passwordConfirmation')?.touched">
+    <div *ngIf="signUpForm.hasError('passwordMismatch')">
+      Passwords do not match.
+    </div>
+  </div>
+  </div>
+  <div class="submit-btn">
+    <button pButton class=""submit-btn type="button" label="Submit" (click)="onSubmit()"></button>
+  </div>
+</div>
+</div>
+</p-dialog>
+<!-- <app-sign-up></app-sign-up> -->
