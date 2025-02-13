@@ -15,6 +15,7 @@ import {MenuItem} from "primeng/api";
 export class TabMenuComponent implements OnInit{
   items: MenuItem[] = [];
   @Output() selectedTab = new EventEmitter<string>();
+  @Output() messageEvent = new EventEmitter<any>();
 
 
   ngOnInit() {
