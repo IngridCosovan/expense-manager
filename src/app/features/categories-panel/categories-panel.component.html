@@ -1,7 +1,7 @@
 @if (categoriesFormsService.$isCreating()) {
   <div data-qa="category-creation-button-form" class="creation-button-form">
     <form class="form-container" [formGroup]="categoriesFormsService.$categoryCreationForm()"
-          (ngSubmit)="createCategory($event)"
+          (ngSubmit)="saveCategory()"
           data-qa="category-panel-category-creation-form">
       <div class="input" data-qa="category-title">
         <div [class.missing-input]="categoriesFormsService.$categoryCreationForm().controls['name'].invalid"
@@ -13,20 +13,25 @@
             pInputText
             inputId="create-category"
             [autofocus]="true"
-            (keydown.enter)="createCategory($event)"
-            [placeholder]="'Category'"
+            (keydown.enter)="saveCategory()"
+            placeholder="Category"
             class="text-input"
-            data-qa="category-panel-text-input-rc-title"
             formControlName="name"
           />
 
           <!--        [appCharacterLimit]="categoryPanelConstants().categoryEditInputMaxLength"-->
         </div>
       </div>
+      <p-dropdown
+        [options]="categoryTypesOptions"
+        [(ngModel)]="selectedCategory"
+        placeholder="Select Category Type">
+      </p-dropdown>
       <div class="buttons" data-qa="category-panel-category-creation-buttons">
         <p-button
           [disabled]="categoriesFormsService.$categoryCreationForm().invalid"
           [label]="'Confirm'"
+          (onClick)="saveCategory()"
           type="submit"
           data-qa="category-panel-button-confirm-creation"></p-button>
         <p-button
@@ -43,3 +48,13 @@
   </div>
 }
 
+<div class="saved-categories">
+  <h3>Saved Categories:</h3>
+  <ul>
+    @for (category of categoriesList; track category.name ) {
+    <li>
+      {{ category.name }} - {{ category.categoryType }}
+    </li>
+    }
+  </ul>
+</div>

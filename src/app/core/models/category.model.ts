@@ -1,10 +1,11 @@
 import {SubcategoryModel} from "app/core/models/subcategory.model";
+import {CategoryType} from "app/core/models/category-type.model";
 
 export interface CategoryModel {
-  is: number;
+  id: number;
   name: string;
   loggedUserId: number;
-  type: string;
+  categoryType: CategoryType;
   subcategories: SubcategoryModel[];
 }
 
