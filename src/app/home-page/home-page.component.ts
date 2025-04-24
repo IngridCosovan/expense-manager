@@ -29,7 +29,6 @@ import {Button} from "primeng/button";
 })
 export class HomePageComponent implements OnInit{
   visible= false;
-  stateSignInDialog = false;
   currentRoute='';
   test = false;
 
@@ -47,15 +46,7 @@ export class HomePageComponent implements OnInit{
     });
   }
 
-  showDialog() {
-    this.stateSignInDialog=true;
-  }
-
-  closeDialog() {
-    this.visible = false;
-  }
-
-  receiveSeletedTab(event: Event){
+  receiveSelectedTab(event: Event){
     console.log(event);
   }
 }
