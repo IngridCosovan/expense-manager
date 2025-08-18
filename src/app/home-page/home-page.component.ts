@@ -1,5 +1,5 @@
 import { LoginAndAuthComponent } from './../login-and-auth/login/login-and-auth.component';
-import {ChangeDetectorRef, Component, DoCheck, OnInit, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {TabMenuComponent} from '../home-page/tab-menu/tab-menu.component';
 import {InplaceModule} from "primeng/inplace";
 import {DialogModule} from "primeng/dialog";
@@ -7,6 +7,7 @@ import {InputTextModule} from "primeng/inputtext";
 import { Router , NavigationEnd, RouterOutlet} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {Button} from "primeng/button";
+import {TranslateModule} from "@ngx-translate/core";
 
 
 @Component({
@@ -20,7 +21,8 @@ import {Button} from "primeng/button";
     InputTextModule,
     CommonModule,
     RouterOutlet,
-    Button
+    Button,
+    TranslateModule
 
   ],
   templateUrl: './home-page.component.html',

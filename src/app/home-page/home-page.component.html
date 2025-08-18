@@ -9,10 +9,15 @@
   <div>{{currentRoute}}</div>
   <!-- @if (currentRoute==='home') { -->
     <!-- <div *ngIf="currentRoute ==='/home'"> -->
-  <div class="left"
+  <div class="left-side"
   >
+    <div class="center-text-title">{{ "HOME.TITLE" | translate }}</div>
+    <div class="center-text">{{ "HOME.TEXT" | translate }}</div>
+    <p-button size="large" label="{{ 'HOME.GET_STARTED_BTN' | translate }}"></p-button>
     </div>
-<!-- </div> -->
+  <div class="right-side"
+  >
+ </div>
 
 <!-- } -->
 </div>

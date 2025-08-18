@@ -1,5 +1,10 @@
 {
   "LOGIN": "Login",
   "EMAIL": "E-mail",
-  "PASSWORD": "Password"
+  "PASSWORD": "Password",
+  "HOME": {
+    "TITLE": "Manage your expenses with ease",
+    "TEXT": "Track your income and expenses, and gain insights into your spending habits.",
+    "GET_STARTED_BTN": "Get Started"
+  }
 }

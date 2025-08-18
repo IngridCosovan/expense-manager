@@ -16,9 +16,9 @@ import {Router} from "@angular/router";
   encapsulation: ViewEncapsulation.None,
 })
 export class TabMenuComponent implements OnInit{
-  items: MenuItem[] | null = [];
+  items: MenuItem[] = [];
   showSignInDialog = false;
-  activeItem: MenuItem | null = null;
+  activeItem: MenuItem = {};
   @Output() selectedTab = new EventEmitter<string>();
   @Output() messageEvent = new EventEmitter<any>();
 
@@ -35,13 +35,14 @@ constructor(private router: Router) {
   }
 
   onTabClick(id: string) {
-    if (id === 'signin') {
-      this.showSignInDialog = true;
-      this.activeItem = null; // ✨ dezactivăm selecția
-    } else {
-      this.router.navigate(['/' + id]);
-      this.activeItem = this.items?.find(i => i.id === id) ?? null;
-    }
+    // if (id === 'signin') {
+    //   this.showSignInDialog = true;
+    //   this.activeItem = null; // ✨ dezactivăm selecția
+    // } else {
+    //   this.router.navigate(['/' + id]);
+    //   this.activeItem = this.items?.find(i => i.id === id) ?? null;
+    // }
+    console.log('test')
   }
   //
   // onTabChange(item: MenuItem) {

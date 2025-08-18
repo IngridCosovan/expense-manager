@@ -19,3 +19,18 @@
   display: flex;
 }
 
+.left-side {
+  flex: 1;
+  margin: 150px 50px 150px 50px
+}
+
+.center-text-title {
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.center-text {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
