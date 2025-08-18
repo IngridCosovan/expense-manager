@@ -1,4 +1,4 @@
-import { LoginAndAuthComponent } from './../login-and-auth/login/login-and-auth.component';
+import { LoginAndAuthComponent } from 'app/login-and-auth/login/login-and-auth.component';
 import {ChangeDetectorRef, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {TabMenuComponent} from '../home-page/tab-menu/tab-menu.component';
 import {InplaceModule} from "primeng/inplace";

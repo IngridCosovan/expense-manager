@@ -19,7 +19,7 @@
   display: flex;
 }
 
-.left-side {
+.left-side, .right-side {
   flex: 1;
   margin: 150px 50px 150px 50px
 }
