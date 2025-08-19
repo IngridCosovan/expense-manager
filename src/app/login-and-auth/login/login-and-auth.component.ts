@@ -8,7 +8,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {MessageService} from "primeng/api";
 import {CommonModule} from "@angular/common";
 import {DialogModule} from "primeng/dialog";
-import { PasswordValidatorService } from '../../shared/password-validator.service';
+import { PasswordValidatorService } from 'app/shared/password-validator.service';
 import { SignUpComponent } from "../sign-up/sign-up.component";
 
 

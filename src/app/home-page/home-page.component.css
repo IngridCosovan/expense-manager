@@ -10,27 +10,23 @@
   margin-left: 3rem
 }
 
-
 .tab-menu-container {
   display: flex;
 }
 
-.home-body-container {
-  display: flex;
+.p-tabmenu .p-tabmenu-nav {
+  border: none !important;
 }
 
-.left-side, .right-side {
-  flex: 1;
-  margin: 150px 50px 150px 50px
+.p-tabmenu-nav-content .p-menuitem-link {
+  font-size: 24px;
+  padding: 12px 48px;
 }
 
-.center-text-title {
-  font-size: 80px;
-  font-weight: bold;
-  margin-bottom: 30px;
+.p-tabmenuitem.p-highlight .p-menuitem-link {
+  color: chartreuse;
 }
 
-.center-text {
-  font-size: 30px;
-  margin-bottom: 30px;
+.tab-menu {
+  width: 750px
 }

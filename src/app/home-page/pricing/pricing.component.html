@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="title">Pricing</div>
+  <div class="text">Choose a plan that's right for you</div>
+  <div class="cards-container">
+    @for (item of subscriptionTypes; track item) {
+      <p-card [header]="item.type" [subheader]="item.price.currency + item.price.value" [style]="{ width: '360px' }">
+        <div>{{ item.numberOfUsers }} users</div>
+        <div>{{ item.storage }} GB of storage</div>
+        <div>{{ item.supportType }} support</div>
+
+        <ng-template pTemplate="footer">
+          <div class="flex gap-3 mt-1">
+            <p-button label="Select" class="w-full" styleClass="w-full"/>
+          </div>
+        </ng-template>
+      </p-card>
+    }
+  </div>
+</div>

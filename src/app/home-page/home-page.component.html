@@ -1,30 +1,11 @@
 <div class="header">
   <div class="logo"> <img src="../assets/img/prisma.svg"></div>
   <div class="tab-menu-container">
-  <app-tab-menu (messageEvent) ="receiveSelectedTab($event)"></app-tab-menu>
+    <p-tabMenu styleClass="tab-menu" [model]="items" ></p-tabMenu>
+    <app-login-and-auth [(visible)]="showSignInDialog"></app-login-and-auth>
   </div>
 </div>
-<div class="home-body-container">
   <router-outlet></router-outlet>
-  <div>{{currentRoute}}</div>
-  <!-- @if (currentRoute==='home') { -->
-    <!-- <div *ngIf="currentRoute ==='/home'"> -->
-  <div class="left-side"
-  >
-    <!--      {{ "HOME.TITLE" | translate }}-->
-    <div class="center-text-title">Manage your expenses with ease
 
-    </div>
-    <!--      {{ "HOME.TEXT" | translate }}-->
-    <div class="center-text">Track your income and expenses, and gain insights into your spending habits.
 
-    </div>
-    <p-button size="large" label='Get Started'></p-button>
-    </div>
-  <div class="right-side"
-  >
- </div>
-
-<!-- } -->
-</div>
 

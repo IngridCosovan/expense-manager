@@ -1,12 +1,18 @@
 import {Routes} from '@angular/router';
-import {HomePageComponent} from "./home-page/home-page.component";
-import {BudgetPageComponent} from "./budget-page/budget-page.component"
+import {HomePageComponent} from "app/home-page/home-page.component";
+import {HomeContentComponent} from "app/home-page/home-content/home-content.component";
+import {PricingComponent} from "app/home-page/pricing/pricing.component";
 
 export const routes: Routes = [
-  {path: 'home', component: HomePageComponent},
-  {path: 'features', component: HomePageComponent},
-  {path: 'pricing', component: HomePageComponent},
-  {path: 'about', component: HomePageComponent},
-  {path: 'budget', component: BudgetPageComponent, title: 'Budget'},
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {
+    path: '',
+    component: HomePageComponent,
+    children: [
+      { path: 'home', component: HomeContentComponent },
+      { path: 'features', component: HomeContentComponent },
+      { path: 'pricing', component: PricingComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' }
+    ]
+  },
+  // { path: 'dashboard', component: DashboardComponent }
 ];
