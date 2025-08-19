@@ -30,7 +30,6 @@ import {TranslateModule} from "@ngx-translate/core";
   encapsulation: ViewEncapsulation.None,
 })
 export class HomePageComponent implements OnInit{
-  visible= false;
   currentRoute='';
   test = false;
 

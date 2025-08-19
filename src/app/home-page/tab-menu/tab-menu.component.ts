@@ -34,11 +34,12 @@ constructor(private router: Router) {
     this.activeItem = this.items[0];
   }
 
+
   onTabClick(id: string) {
-    // if (id === 'signin') {
-    //   this.showSignInDialog = true;
-    //   this.activeItem = null; // ✨ dezactivăm selecția
-    // } else {
+    if (id === 'signin') {
+      this.showSignInDialog = true;
+
+    }
     //   this.router.navigate(['/' + id]);
     //   this.activeItem = this.items?.find(i => i.id === id) ?? null;
     // }
