@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import {provideAnimations} from "@angular/platform-browser/animations";
 import {HttpClient, provideHttpClient} from "@angular/common/http";
-import {TranslateLoader, TranslateService} from "@ngx-translate/core";
+import {TranslateLoader, TranslateModule, TranslateService} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 
 export function HttpLoaderFactory(http: any) {
@@ -16,11 +16,12 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimations(),
     provideHttpClient(),
-    TranslateService,
-    {
-      provide: TranslateLoader,
-      useFactory: HttpLoaderFactory,
-      deps: [HttpClient]
-    }
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }).providers!
   ]
 };
