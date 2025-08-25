@@ -22,7 +22,7 @@
 }
 
 .signup-link {
-margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .form {
@@ -44,7 +44,7 @@ margin-left: 1rem;
 }
 
 .label {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
   color: #6C757D;
 }
 

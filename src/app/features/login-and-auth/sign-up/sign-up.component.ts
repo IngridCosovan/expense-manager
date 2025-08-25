@@ -1,23 +1,27 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ButtonDirective} from "primeng/button";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {InputTextModule} from "primeng/inputtext";
+import {NgIf} from "@angular/common";
 import {PasswordModule} from "primeng/password";
-import {
-  PasswordValidatorService,
-} from "../../shared/password-validator.service";
-import {CommonModule} from "@angular/common";
-import {ButtonModule} from "primeng/button";
-import { DialogModule } from 'primeng/dialog';
+import {PasswordValidatorService} from "app/core/validators/password-validator.service";
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, InputTextModule, PasswordModule, CommonModule, ButtonModule, DialogModule],
+    imports: [
+        ButtonDirective,
+        FormsModule,
+        InputTextModule,
+        NgIf,
+        PasswordModule,
+        ReactiveFormsModule
+    ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent implements OnInit{
-  @Input()visible: boolean = false;
+  @Input() visible: boolean = false;
   signupDialogIsVisible = false;
   signUpForm: FormGroup;
 
@@ -39,7 +43,7 @@ export class SignUpComponent implements OnInit{
     }
   }
 
-  closeDialog(){
+  closeDialog() {
     this.signupDialogIsVisible = false;
   }
 }

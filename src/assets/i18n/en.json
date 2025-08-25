@@ -1,10 +1,21 @@
 {
-  "LOGIN": "Login",
-  "EMAIL": "E-mail",
-  "PASSWORD": "Password",
+  "LOGIN_DIALOG": {
+    "TITLE": "Login",
+    "EMAIL": "E-mail",
+    "PASSWORD": "Password",
+    "NO_ACCOUNT": "You don't have an account?",
+    "FORGOT_PASSWORD": "Forgot your\n    password?",
+    "USERNAME": "Username",
+    "CONFIRM_PASSWORD": "Confirm password",
+    "PASSWORD_DONT_MATCH": "Passwords do not match."
+  },
   "HOME": {
     "TITLE": "Manage your expenses with ease",
     "CONTENT": "Track your income and expenses, and gain insights into your spending habits.",
-    "BUTTON" : "Get Started"
+    "BUTTON": "Get Started"
+  },
+  "BUTTON": {
+    "SUBMIT": "Submit",
+    "SIGN_IN": "Sign in"
   }
 }

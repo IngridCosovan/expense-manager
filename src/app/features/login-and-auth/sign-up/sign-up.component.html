@@ -10,19 +10,20 @@
 
   <div class="password">
     <p>Parola</p>
-  <p-password formControlName="password" [toggleMask]="true"></p-password>
+    <p-password formControlName="password" [toggleMask]="true"></p-password>
   </div>
 
-<div class="password">
-  <p>Confirma parola</p>
-  <p-password  class="password" formControlName="passwordConfirmation" [toggleMask]="true"></p-password>
-  <div *ngIf="signUpForm.get('passwordConfirmation')?.invalid && signUpForm.get('passwordConfirmation')?.touched">
-    <div *ngIf="signUpForm.hasError('passwordMismatch')">
-      Passwords do not match.
+  <div class="password">
+    <p>Confirma parola</p>
+    <p-password  class="password" formControlName="passwordConfirmation" [toggleMask]="true"></p-password>
+    <div *ngIf="signUpForm.get('passwordConfirmation')?.invalid && signUpForm.get('passwordConfirmation')?.touched">
+      <div *ngIf="signUpForm.hasError('passwordMismatch')">
+        Passwords do not match.
+      </div>
     </div>
-  </div>
   </div>
   <div class="submit-btn">
     <button pButton type="button" label="Submit" (click)="onSubmit()"></button>
   </div>
 </div>
+
