@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {BudgetPageComponent} from "app/budget-page/budget-page.component";
 
-describe('BudgetPageComponent', () => {
-  let component: BudgetPageComponent;
-  let fixture: ComponentFixture<BudgetPageComponent>;
+import { MainBoardComponent } from './main-board.component';
+
+describe('MainBoardComponent', () => {
+  let component: MainBoardComponent;
+  let fixture: ComponentFixture<MainBoardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BudgetPageComponent]
+      imports: [MainBoardComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BudgetPageComponent);
+    fixture = TestBed.createComponent(MainBoardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

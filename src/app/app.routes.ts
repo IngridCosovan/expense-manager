@@ -1,8 +1,9 @@
 import {Routes} from '@angular/router';
-import {BudgetPageComponent} from "app/budget-page/budget-page.component";
 import {HomePageComponent} from "app/features/home-page/home-page.component";
 import {HomeContentComponent} from "app/features/home-page/home-content/home-content.component";
 import {PricingComponent} from "app/features/home-page/pricing/pricing.component";
+import {MainBoardComponent} from "app/features/main-board/main-board.component";
+import {TransactionsBoardComponent} from "app/features/transactions-board/transactions-board.component";
 
 export const routes: Routes = [
   {
@@ -15,9 +16,11 @@ export const routes: Routes = [
       {path: '', redirectTo: 'home', pathMatch: 'full'}
     ]
   },
-  {path: 'budget', component: BudgetPageComponent,
+  {path: 'main', component: MainBoardComponent,
     children: [
-      // {path: 'income', component: IncomeComponent}
+      {path: 'transactions', component: TransactionsBoardComponent},
+      {path: 'dashboard', component: TransactionsBoardComponent},
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },
 ];

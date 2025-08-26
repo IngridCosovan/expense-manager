@@ -17,5 +17,12 @@
   "BUTTON": {
     "SUBMIT": "Submit",
     "SIGN_IN": "Sign in"
+  },
+  "MAIN_HEADER": {
+    "DASHBOARD": "Dashboard",
+    "TRANSACTIONS": "Transactions",
+    "BUDGET": "Budget",
+    "REPORTS": "Reports",
+    "INVESTMENTS": "Investments"
   }
 }

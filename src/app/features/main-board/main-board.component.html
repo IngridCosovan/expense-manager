@@ -1,0 +1,23 @@
+
+<div class="app-layout">
+
+  <div class="header-tab">
+
+    <div class="main-title">{{ pageTitle }}</div>
+    @if (showAddButton){
+      <div>
+    <p-button icon="pi pi-plus" styleClass="add-btn" label="Add" (onClick)="addTransaction()"></p-button>
+      </div>
+        }
+
+  </div>
+
+  <div class="app-body">
+    <aside class="side-menu">
+      <app-side-menu></app-side-menu>
+    </aside>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

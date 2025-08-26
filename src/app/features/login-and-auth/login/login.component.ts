@@ -59,6 +59,6 @@ export class LoginComponent {
 
   signIn() {
     this.visible = false
-    this.router.navigate(['/' + 'budget']);
+    this.router.navigate(['/' + 'main']);
   }
 }

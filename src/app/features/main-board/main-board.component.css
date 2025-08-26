@@ -1,0 +1,51 @@
+.app-layout{
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* tot ecranul */
+  position: relative;
+}
+
+.app-body {
+  display: flex;
+  flex: 1; /* tot spațiul rămas sub header */
+  overflow: hidden;
+}
+.header-tab {
+  height: 50px;
+  background-color: #1E152A;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+app-side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background: #fff;
+  z-index: 2;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.main-title {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 300px
+}
+
+.add-btn {
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  height:20px;
+}
+
+.content {
+  height: calc(100vh - 50px);
+  flex: 1;          /* ocupă tot spațiul rămas pe orizontală */
+  overflow-y: auto;  /* scroll dacă e nevoie */
+  background: red;
+}

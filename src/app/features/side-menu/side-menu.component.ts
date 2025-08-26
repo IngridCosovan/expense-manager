@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import {ChangeDetectorRef, Component} from '@angular/core';
 import {BadgeModule} from "primeng/badge";
 import {AvatarModule} from "primeng/avatar";
 import {MenuModule} from "primeng/menu";
 import {Ripple} from "primeng/ripple";
+import {MenuItem} from "primeng/api";
+import {NavigationEnd, Router} from "@angular/router";
 
 @Component({
   selector: 'app-side-menu',
@@ -17,7 +19,8 @@ import {Ripple} from "primeng/ripple";
   styleUrl: './side-menu.component.css'
 })
 export class SideMenuComponent {
-items = [
+  currentRoute = '';
+  items: MenuItem[] = [
     {
       separator: true
     },
@@ -26,27 +29,27 @@ items = [
       items: [
         {
           label: 'Dashboard',
-          icon: 'pi pi-plus',
+          routerLink: '/dashboard',
+          icon: 'pi pi-chart-bar',
+          command: () => this.onTabClick('dashboard')
         },
         {
-          label: 'Income',
-          icon: 'pi pi-plus',
-        },
-        {
-          label: 'Expenses',
-          icon: 'pi pi-plus',
+          label: 'Transactions',
+          icon: 'pi pi-wallet',
+          routerLink: '/transactions',
+          command: () => this.onTabClick('transactions')
         },
         {
           label: 'Budget',
-          icon: 'pi pi-plus',
+          icon: 'pi pi-chart-pie',
         },
         {
           label: 'Reports',
-          icon: 'pi pi-plus',
+          icon: 'pi pi-chart-line',
         },
         {
           label: 'Investments',
-          icon: 'pi pi-plus',
+          icon: 'pi pi-money-bill',
         },
       ]
     },
@@ -74,4 +77,11 @@ items = [
       separator: true
     }
   ];
+
+  constructor(private router: Router) {
+  }
+
+  onTabClick(id: string) {
+    this.router.navigate(['/main/' + id]);
+  }
 }
