@@ -1,9 +1,12 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, ViewChild, ViewEncapsulation} from '@angular/core';
 import {AvatarModule} from "primeng/avatar";
 import {SideMenuComponent} from "app/layout/side-menu/side-menu.component";
 import {TranslateModule} from "@ngx-translate/core";
-import { ButtonModule} from "primeng/button";
+import {ButtonModule} from "primeng/button";
 import {NavigationEnd, Router, RouterOutlet} from "@angular/router";
+import {Menu, MenuModule} from "primeng/menu";
+import {MenuItem} from "primeng/api";
+import {AuthService} from "app/core/services/auth.service";
 
 @Component({
   selector: 'app-main-board',
@@ -13,19 +16,27 @@ import {NavigationEnd, Router, RouterOutlet} from "@angular/router";
     SideMenuComponent,
     TranslateModule,
     ButtonModule,
-    RouterOutlet
+    RouterOutlet,
+    MenuModule,
   ],
   templateUrl: './main-board.component.html',
   styleUrl: './main-board.component.css',
   encapsulation: ViewEncapsulation.None,
 })
 export class MainBoardComponent {
-  pageTitle = ''
-  showAddButton = true;
+  @ViewChild('profileMenu') profileMenu!: Menu;
 
-  constructor(private router: Router) {
+  pageTitle = '';
+  showAddButton = true;
+  profileItems: MenuItem[] = [
+    {label: 'Profile', icon: 'pi pi-user'},
+    {label: 'Settings', icon: 'pi pi-cog'},
+    {separator: true},
+    {label: 'Sign Out', icon: 'pi pi-sign-out', command: () => this.signOut()},
+  ];
+
+  constructor(private router: Router, private authService: AuthService) {
     this.router.events.subscribe(event => {
-      console.log('event ', event)
       if (event instanceof NavigationEnd) {
         if (event.url.includes('transactions')) {
           this.pageTitle = 'Transactions';
@@ -38,7 +49,12 @@ export class MainBoardComponent {
     });
   }
 
-  addTransaction() {
-    console.log('works')
+  addTransaction(): void {
+    console.log('works');
+  }
+
+  signOut(): void {
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 }

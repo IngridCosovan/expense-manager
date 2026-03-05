@@ -38,9 +38,19 @@ app-side-menu {
 
 .add-btn {
   position: absolute;
-  right: 20px;
+  right: 60px;
   top: 12px;
-  height:20px;
+  height: 20px;
+}
+
+.profile-btn {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+}
+
+.profile-btn .p-button {
+  color: white;
 }
 
 .content {

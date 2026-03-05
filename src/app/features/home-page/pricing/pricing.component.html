@@ -16,7 +16,12 @@
         <div>{{ item.supportType }} support</div>
         <ng-template pTemplate="footer">
           <div class="flex gap-3 mt-1">
-            <p-button label="Select" class="w-full" styleClass="w-full" />
+            <p-button
+              label="Select"
+              (onClick)="selectSubscription()"
+              class="w-full"
+              styleClass="w-full"
+            />
           </div>
           <hr class="features-divider" />
           <ul class="features-list">

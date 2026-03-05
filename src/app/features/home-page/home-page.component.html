@@ -1,8 +1,11 @@
 <div class="header">
   <div class="logo"><img src="../assets/img/logo.svg" /></div>
   <div class="tab-menu-container">
-    <p-tabMenu styleClass="tab-menu" [model]="items"></p-tabMenu>
-    <app-login [(visible)]="showSignInDialog"></app-login>
+    <p-tabMenu styleClass="tab-menu" [model]="tabs"></p-tabMenu>
+    <app-login
+      [visible]="uiState.showLoginDialog()"
+      (visibleChange)="uiState.showLoginDialog.set($event)"
+    ></app-login>
   </div>
 </div>
 <router-outlet></router-outlet>

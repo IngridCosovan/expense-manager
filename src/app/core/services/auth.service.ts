@@ -8,6 +8,14 @@ export class AuthService {
   constructor() {
   }
 
+  isLoggedIn(): boolean {
+    return this.isAuthenticated;
+  }
+
+  logout(): void {
+    this.isAuthenticated = false;
+  }
+
   login(username: string, password: string): boolean {
     // Simulate authentication (replace with real API call)
     if (username === 'user' && password === 'password') {

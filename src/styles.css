@@ -4,10 +4,13 @@
 /*}*/
 /*$em-green: #007BC0;*/
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
+.p-dialog .p-dialog-content {
+  border-radius: 0 0 6px 6px !important;
+}

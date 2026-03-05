@@ -11,6 +11,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { LoginComponent } from 'app/features/login-and-auth/login/login.component';
 import { ButtonModule } from 'primeng/button';
+import { UiStateService } from 'app/core/services/ui-state.service';
 
 @Component({
   selector: 'app-home-page',
@@ -23,16 +24,16 @@ import { ButtonModule } from 'primeng/button';
 export class HomePageComponent implements OnInit, OnDestroy {
   private notifier = new Subject<void>();
   currentRoute = '';
-  items: MenuItem[] = [];
-  showSignInDialog = false;
+  tabs: MenuItem[] = [];
 
   constructor(
     private router: Router,
     private cdr: ChangeDetectorRef,
+    protected uiState: UiStateService,
   ) {}
 
   ngOnInit(): void {
-    this.items = [
+    this.tabs = [
       { label: 'Home', id: 'home', command: () => this.onTabClick('home') },
       {
         label: 'Features',
@@ -50,7 +51,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
         command: () => this.onTabClick('signin'),
       },
     ];
-
     this.router.events.pipe(takeUntil(this.notifier)).subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.urlAfterRedirects;
@@ -66,7 +66,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   onTabClick(id: string): void {
     if (id === 'signin') {
-      this.showSignInDialog = true;
+      this.uiState.openLoginDialog();
     }
     this.router.navigate(['/' + id]);
   }

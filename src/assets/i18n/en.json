@@ -7,7 +7,8 @@
     "FORGOT_PASSWORD": "Forgot your\n    password?",
     "USERNAME": "Username",
     "CONFIRM_PASSWORD": "Confirm password",
-    "PASSWORD_DONT_MATCH": "Passwords do not match."
+    "PASSWORD_DONT_MATCH": "Passwords do not match.",
+    "SIGNUP_NOW": "Signup now"
   },
   "HOME": {
     "TITLE": "Manage your expenses with ease",

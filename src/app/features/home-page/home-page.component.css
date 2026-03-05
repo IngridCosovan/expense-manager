@@ -26,6 +26,17 @@
 
 .p-tabmenuitem.p-highlight .p-menuitem-link {
   color: chartreuse;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.p-tabmenuitem .p-menuitem-link:focus {
+  box-shadow: none !important;
+}
+
+.p-tabmenuitem .p-menuitem-link:not(.p-disabled):focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .tab-menu {

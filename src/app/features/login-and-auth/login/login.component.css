@@ -14,7 +14,9 @@
   padding: 0 !important;
 }
 
-.sign-in-btn, .sign-up-link-container, .submit-btn {
+.sign-in-btn,
+.sign-up-link-container,
+.submit-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +47,7 @@
 
 .label {
   margin-bottom: 0;
-  color: #6C757D;
+  color: #6c757d;
 }
 
 .submit-btn {
