@@ -3,17 +3,29 @@
   <div class="text">Choose a plan that's right for you</div>
   <div class="cards-container">
     @for (item of subscriptionTypes; track item) {
-      <p-card styleClass="p-card" class="card" [header]="item.type" [subheader]="item.price.currency + item.price.value" [style]="{ width: '360px' }">
+      <p-card
+        styleClass="p-card"
+        class="card"
+        [header]="item.type"
+        [subheader]="item.subtitle"
+        [style]="{ width: '360px' }"
+      >
+        <div>{{ item.price.currency + item.price.value }}</div>
         <div>{{ item.numberOfUsers }} users</div>
         <div>{{ item.storage }} GB of storage</div>
         <div>{{ item.supportType }} support</div>
         <ng-template pTemplate="footer">
           <div class="flex gap-3 mt-1">
-            <p-button label="Select" class="w-full" styleClass="w-full"/>
+            <p-button label="Select" class="w-full" styleClass="w-full" />
           </div>
+          <hr class="features-divider" />
+          <ul class="features-list">
+            @for (feature of item.features; track feature) {
+              <li>✔ {{ feature }}</li>
+            }
+          </ul>
         </ng-template>
       </p-card>
     }
   </div>
 </div>
-

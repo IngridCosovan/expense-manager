@@ -1,9 +1,8 @@
 <div class="header">
-  <div class="logo"> <img src="../assets/img/prisma.svg"></div>
+  <div class="logo"><img src="../assets/img/logo.svg" /></div>
   <div class="tab-menu-container">
-    <p-tabMenu styleClass="tab-menu" [model]="items" ></p-tabMenu>
+    <p-tabMenu styleClass="tab-menu" [model]="items"></p-tabMenu>
     <app-login [(visible)]="showSignInDialog"></app-login>
   </div>
 </div>
 <router-outlet></router-outlet>
-
