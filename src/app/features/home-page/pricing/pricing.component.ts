@@ -1,16 +1,14 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {Button} from "primeng/button";
 import {CardModule} from "primeng/card";
-import {PrimeTemplate} from "primeng/api";
+import { ButtonModule } from 'primeng/button';
 import {subscriptionTypes} from "app/core/models/subscription-type.model";
 
 @Component({
   selector: 'app-pricing',
   standalone: true,
   imports: [
-    Button,
     CardModule,
-    PrimeTemplate
+    ButtonModule
   ],
   templateUrl: './pricing.component.html',
   styleUrl: './pricing.component.css',

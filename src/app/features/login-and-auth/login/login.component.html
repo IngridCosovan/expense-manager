@@ -1,59 +1,55 @@
-<p-dialog header="{{'LOGIN_DIALOG.TITLE' | translate}}" [draggable]="false" [modal]="true" [appendTo]="'body'"
+<p-dialog header="{{ 'LOGIN_DIALOG.TITLE' | translate }}" [draggable]="false" [modal]="true" [appendTo]="'body'"
           [resizable]="false" [(visible)]="visible" [style]="{ width: '25rem', height:'40rem' }"
           (onHide)="closeDialog()">
-  <div class="input-container">
-    <label for="username" class="font-semibold">{{ 'LOGIN_DIALOG.EMAIL' | translate }}</label>
-    <input pInputText id="username" class="flex-auto" autocomplete="off"/>
-  </div>
-  <div class="input-container">
-    <label for="email" class="font-semibold">{{ 'LOGIN_DIALOG.PASSWORD' | translate }}</label>
-    <input pInputText id="email" class="flex-auto" autocomplete="off"/>
-  </div>
-  <a href="https://angular.dev/" target="_blank" rel="noopener noreferrer"
-     class="forgot-pass font-bold">{{ 'LOGIN_DIALOG.FORGOT_PASSWORD' | translate }}</a>
+  <form [formGroup]="loginForm">
+    <div class="input-container">
+      <label for="login-email" class="font-semibold">{{ 'LOGIN_DIALOG.EMAIL' | translate }}</label>
+      <input pInputText id="login-email" type="email" class="flex-auto" formControlName="email" autocomplete="email"/>
+    </div>
+    <div class="input-container">
+      <label for="login-password" class="font-semibold">{{ 'LOGIN_DIALOG.PASSWORD' | translate }}</label>
+      <input pInputText id="login-password" type="password" class="flex-auto" formControlName="password" autocomplete="current-password"/>
+    </div>
+  </form>
+  <a href="#" class="forgot-pass font-bold">{{ 'LOGIN_DIALOG.FORGOT_PASSWORD' | translate }}</a>
   <div class="sign-in-btn-container">
     <p-button class="sign-in-btn" label="{{ 'BUTTON.SIGN_IN' | translate }}" severity="secondary" (onClick)="signIn()"/>
   </div>
   <div class="sign-up-link-container">
-    <p>{{ 'LOGIN_DIALOG.NO_ACCOUNT' | translate }}</p><a href="#" class="signup-link font-bold button-link"
-                                                         (click)="openSignupDialog($event)">Signup now!</a>
+    <p>{{ 'LOGIN_DIALOG.NO_ACCOUNT' | translate }}</p>
+    <a href="#" class="signup-link font-bold button-link" (click)="openSignupDialog($event)">
+      {{ 'LOGIN_DIALOG.SIGNUP_NOW' | translate }}
+    </a>
   </div>
 </p-dialog>
 
-
-<p-dialog header="Signup" [appendTo]="'body'" [draggable]="false" [modal]="true"
+<p-dialog header="{{ 'LOGIN_DIALOG.SIGNUP_TITLE' | translate }}" [appendTo]="'body'" [draggable]="false" [modal]="true"
           [resizable]="false" [(visible)]="signUpIsOpen" [style]="{ width: '25rem', height:'40rem' }"
           (onHide)="closeDialog()">
-  <div class="form" [formGroup]="signUpForm">
+  <form class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
     <div class="form-container">
-  <span class="p-float-label">
-    <input class="input" id="float-input-un" type="text" pInputText formControlName="username">
-    <label for="float-input-un">{{ 'LOGIN_DIALOG.USERNAME' | translate }}</label>
-</span>
       <span class="p-float-label">
-    <input class="input" id="float-input-email" type="text" pInputText formControlName="email">
-    <label for="float-input-email">{{ 'LOGIN_DIALOG.EMAIL' | translate }}</label>
-</span>
-
+        <input class="input" id="float-input-un" type="text" pInputText formControlName="username" autocomplete="username">
+        <label for="float-input-un">{{ 'LOGIN_DIALOG.USERNAME' | translate }}</label>
+      </span>
+      <span class="p-float-label">
+        <input class="input" id="float-input-email" type="email" pInputText formControlName="email" autocomplete="email">
+        <label for="float-input-email">{{ 'LOGIN_DIALOG.EMAIL' | translate }}</label>
+      </span>
       <div class="password">
         <p class="label">{{ 'LOGIN_DIALOG.PASSWORD' | translate }}</p>
         <p-password formControlName="password" [toggleMask]="true"></p-password>
       </div>
-
       <div class="password">
         <p class="label">{{ 'LOGIN_DIALOG.CONFIRM_PASSWORD' | translate }}</p>
-        <p-password class="password" formControlName="passwordConfirmation" [toggleMask]="true"></p-password>
-        <div *ngIf="signUpForm.get('passwordConfirmation')?.invalid && signUpForm.get('passwordConfirmation')?.touched">
-          <div *ngIf="signUpForm.hasError('passwordMismatch')">
-            {{ 'LOGIN_DIALOG.PASSWORD_DONT_MATCH' | translate }}
-          </div>
-        </div>
+        <p-password formControlName="passwordConfirmation" [toggleMask]="true" [feedback]="false"></p-password>
+        <small *ngIf="signUpForm.hasError('passwordMismatch') && signUpForm.get('passwordConfirmation')?.touched" class="p-error">
+          {{ 'LOGIN_DIALOG.PASSWORD_DONT_MATCH' | translate }}
+        </small>
       </div>
       <div class="submit-btn">
-        <button pButton class="submit-btn" type="button" label="{{'BUTTON.SUBMIT' | translate}}"
-                (click)="onSubmit()"></button>
+        <button pButton type="submit" label="{{ 'BUTTON.SUBMIT' | translate }}"></button>
       </div>
     </div>
-  </div>
+  </form>
 </p-dialog>
-<!-- <app-sign-up></app-sign-up> -->

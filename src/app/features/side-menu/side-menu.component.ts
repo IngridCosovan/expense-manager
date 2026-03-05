@@ -1,10 +1,10 @@
-import {ChangeDetectorRef, Component} from '@angular/core';
+import {Component} from '@angular/core';
 import {BadgeModule} from "primeng/badge";
 import {AvatarModule} from "primeng/avatar";
 import {MenuModule} from "primeng/menu";
-import {Ripple} from "primeng/ripple";
+import {Ripple, RippleModule} from "primeng/ripple";
 import {MenuItem} from "primeng/api";
-import {NavigationEnd, Router} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-side-menu',
@@ -13,7 +13,7 @@ import {NavigationEnd, Router} from "@angular/router";
     BadgeModule,
     AvatarModule,
     MenuModule,
-    Ripple
+    RippleModule
   ],
   templateUrl: './side-menu.component.html',
   styleUrl: './side-menu.component.css'
@@ -59,7 +59,6 @@ export class SideMenuComponent {
         {
           label: 'Settings',
           icon: 'pi pi-cog',
-          shortcut: '⌘+O'
         },
         {
           label: 'Messages',
@@ -68,8 +67,7 @@ export class SideMenuComponent {
         },
         {
           label: 'Logout',
-          icon: 'pi pi-sign-out',
-          shortcut: '⌘+Q'
+          icon: 'pi pi-sign-out'
         }
       ]
     },

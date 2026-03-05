@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Button, ButtonDirective} from "primeng/button";
+import {ButtonModule} from "primeng/button";
 import {DialogModule} from "primeng/dialog";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {InputTextModule} from "primeng/inputtext";
@@ -13,8 +13,7 @@ import {Router} from "@angular/router";
   selector: 'app-login',
   standalone: true,
     imports: [
-        Button,
-        ButtonDirective,
+        ButtonModule,
         DialogModule,
         FormsModule,
         InputTextModule,
@@ -30,9 +29,15 @@ export class LoginComponent {
   @Input() visible: boolean = false;
   @Output() visibleChange = new EventEmitter<boolean>();
   signUpIsOpen = false;
+  loginForm: FormGroup;
   signUpForm: FormGroup;
 
   constructor(private passwordValidator: PasswordValidatorService, private router: Router) {
+    this.loginForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required]),
+    });
+
     this.signUpForm = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
