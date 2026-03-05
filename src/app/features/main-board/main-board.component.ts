@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {AvatarModule} from "primeng/avatar";
-import {SideMenuComponent} from "app/features/side-menu/side-menu.component";
+import {SideMenuComponent} from "app/layout/side-menu/side-menu.component";
 import {TranslateModule} from "@ngx-translate/core";
 import { ButtonModule} from "primeng/button";
 import {NavigationEnd, Router, RouterOutlet} from "@angular/router";
