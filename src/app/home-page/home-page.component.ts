@@ -55,6 +55,8 @@ export class HomePageComponent implements OnInit{
 
   receiveSeletedTab(event: Event){
     console.log(event);
+    console.log('test');
+
   }
 }
 
