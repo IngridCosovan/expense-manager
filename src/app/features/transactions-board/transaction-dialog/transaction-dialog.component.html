@@ -1,1 +1,11 @@
-<p>transaction-dialog works!</p>
+<div class="container">
+  <p>transaction-dialog works!</p>
+  @if (showAddButton) {
+    <p-button
+      icon="pi pi-plus"
+      styleClass="add-btn"
+      label="Add"
+      (onClick)="addTransaction()"
+    ></p-button>
+  }
+</div>

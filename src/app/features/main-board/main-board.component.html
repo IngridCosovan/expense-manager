@@ -1,11 +1,6 @@
-
 <div class="app-layout">
-
   <div class="header-tab">
     <div class="main-title">{{ pageTitle }}</div>
-    @if (showAddButton) {
-      <p-button icon="pi pi-plus" styleClass="add-btn" label="Add" (onClick)="addTransaction()"></p-button>
-    }
     <p-menu #profileMenu [model]="profileItems" [popup]="true"></p-menu>
     <p-button
       class="profile-btn"

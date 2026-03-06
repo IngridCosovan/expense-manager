@@ -1,4 +1,4 @@
-.app-layout{
+.app-layout {
   display: flex;
   flex-direction: column;
   height: 100vh; /* tot ecranul */
@@ -11,29 +11,26 @@
   overflow: hidden;
 }
 .header-tab {
-  height: 50px;
-  background-color: #1E152A;
+  height: 65px;
+  background-color: #1e152a;
   display: flex;
   align-items: center;
   position: relative;
 }
 
-app-side-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 250px;
+aside.side-menu {
+  flex-shrink: 0;
   background: #fff;
-  z-index: 2;
   box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  overflow: hidden;
 }
 
 .main-title {
   color: white;
   font-size: 25px;
   font-weight: bold;
-  margin-left: 300px
+  margin-left: 300px;
 }
 
 .add-btn {
@@ -54,10 +51,6 @@ app-side-menu {
 }
 
 .content {
-  height: calc(100vh - 50px);
-  flex: 1;          /* ocupă tot spațiul rămas pe orizontală */
-  overflow-y: auto;  /* scroll dacă e nevoie */
-  background: red;
+  flex: 1;
+  overflow-y: auto;
 }
-
-

@@ -1,0 +1,81 @@
+.side-menu-container {
+  width: 250px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+}
+
+.side-menu-container.collapsed {
+  width: 45px;
+}
+
+.toggle-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 8px 0;
+}
+
+.side-menu-container.collapsed .toggle-btn-wrapper {
+  justify-content: center;
+}
+
+.toggle-arrow-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  color: var(--text-color-secondary);
+  display: flex;
+  align-items: center;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.toggle-arrow-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text-color);
+}
+
+.toggle-arrow-btn .pi {
+  font-size: 1rem;
+}
+
+/* Iconuri in starea collapsed, usor spre stanga */
+.menu-item-icon-only {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 12px 0 12px 0;
+  margin-left: -5px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.menu-item-icon-only:hover {
+  background: var(--surface-hover);
+}
+
+.menu-icon {
+  font-size: 1.2rem;
+}
+
+.menu-item-label {
+  margin-left: 15px;
+}
+
+/* Fara borduri pe p-menu cand e expanded */
+:host ::ng-deep .p-menu {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+:host .side-menu-container.collapsed ::ng-deep .p-submenu-header {
+  display: none;
+}
